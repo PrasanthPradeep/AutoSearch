@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Bing Searches</title>
+</head>
+<body>
+    <h1>Random Bing Searches</h1>
+    <button id="searchButton">Perform Searches</button>
+
+    <script>
+        document.getElementById('searchButton').addEventListener('click', () => {
+            // When the button is clicked, you can make an HTTP request to your server
+            // to execute the Node.js script.
+            fetch('/runSearches') // You need to create a server route to handle this request
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error(error));
+        });
+    </script>
+</body>
+</html>
